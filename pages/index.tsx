@@ -1,5 +1,6 @@
 import { GetServerSideProps } from 'next';
 import { useState } from 'react';
+import Head from 'next/head';
 import ProductList from '../components/ProductList';
 import SearchBar from '../components/SearchBar';
 import Header from '../components/Header';
@@ -38,6 +39,13 @@ const Home = ({ products }: ProductPageProps) => {
 
   return (
     <div>
+      <Head>
+        <title>Product Listing - E-commerce</title>
+        <meta name="description" content="Browse our extensive product range and find what you need at great prices." />
+        <meta name="keywords" content="e-commerce, products, online store, shopping" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Header />
       <main className="container mx-auto pt-20 p-4">
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
